@@ -7,13 +7,12 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div>
+    <div className=" bg-[rgb(36,36,36)] snap-y snap-mandatory overfleo-scroll text-white h-screen">
       <Head>
         <title>Author Nick</title>
       </Head>
-      <h1 className=" text-red-500">Author Nick</h1>
       <Header />
-      <section className="">
+      <section id="openpage" className=" snap-center">
         <OpenPage />
       </section>
     </div>
