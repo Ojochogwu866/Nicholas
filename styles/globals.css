@@ -4,6 +4,6 @@
 
 @layer components {
   .navbutton {
-    @apply py-3 border-b-2 pb-1 border-[#242424] uppercase text-xs tracking-wider w-auto text-gray-500 transition-all hover:border-[#f7ab0a]/40 hover:text-[#f7ab0a]/40;
+    @apply py-3 hover:border-b-2 hover:pb-0  uppercase text-xs tracking-wider w-auto text-gray-500  hover:border-[#f7ab0a]/40 hover:text-[#f7ab0a]/40;
   }
 }

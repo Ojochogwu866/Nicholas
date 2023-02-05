@@ -8,13 +8,13 @@ function Nav({}: Props) {
     <div className=" mt-3">
       <div className="flex w-full gap-x-6">
         <Link href="#about">
-          <button className="navbutton">/ABOUT</button>
+          <button className="navbutton">/ ABOUT</button>
         </Link>
         <Link href="#shelf&publications">
-          <button className="navbutton">/SHELF&PUBLICATIONS</button>
+          <button className="navbutton">/ SHELF&PUBLICATIONS</button>
         </Link>
         <Link href="#speak-with-nick">
-          <button className="navbutton">CONTACT</button>
+          <button className="navbutton">/ CONTACT</button>
         </Link>
       </div>
     </div>
