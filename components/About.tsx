@@ -9,7 +9,7 @@ function About({}: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="h-screen flex-col relative items-center md:text-left md:flex-row flex max-w-7xl px-10 justify-evenly mx-auto"
+      className="h-screen flex-col relative items-center md:text-left md:flex-row flex  max-w-7xl px-10 justify-evenly mx-auto"
     >
       <h3 className=" text-sm absolute top-10 uppercase tracking-[15px] text-gray-500">
         About
