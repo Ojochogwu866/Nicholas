@@ -10,7 +10,7 @@ function publications({}: Props) {
       <h3 className=" text-sm absolute top-10 uppercase tracking-[15px] text-gray-500">
         SHELF & PUBLICATIONS
       </h3>
-      <div className=" relative w-full overflow-x-scroll flex overflow-y-hidden snap-x snap-mandatory z-20">
+      <div className=" relative w-full overflow-x-scroll flex overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80">
         {publications.map((publication, i) => (
           <div className=" w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center  p-20 md:p-44 h-screen">
             <motion.img

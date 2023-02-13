@@ -23,9 +23,9 @@ function About({}: Props) {
           x: 0,
           opacity: 1,
         }}
-        src={avatar}
+        src="https://i.ibb.co/5jHTHVt/indexk.jpg"
         viewport={{ once: true }}
-        className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
+        className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded md:w-64 md:h-95 xl:w-[450px] xl:h-[550px]"
       />
       <div className=" space-y-10 px-0 mt-6 md:px-10">
         <p className=" text-sm leading-6 text-center">

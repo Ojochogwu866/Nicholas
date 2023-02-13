@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className=" bg-[#0A1828] snap-y snap-mandatory overfleo-scroll text-white ">
+    <div className=" bg-[#0A1828] snap-y snap-mandatory h-screen overflow-y-scroll overflow-x-hidden text-white z-0 scrollbar scrollbar-none">
       <Head>
         <title>Author Nick</title>
       </Head>
