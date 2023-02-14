@@ -15,5 +15,4 @@ function Openpage({}: Props) {
     </div>
   );
 }
-
 export default Openpage;
