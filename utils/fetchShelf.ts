@@ -1,6 +1,6 @@
 import { Shelf } from "../typings";
 
-export const fetchPosts = async () => {
+export const fetchShelf = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getShelf`);
 
   const data = await res.json();

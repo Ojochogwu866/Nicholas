@@ -7,12 +7,12 @@ const query = groq`
 *[_type == "profileInfo"]
 `;
 type Data = {
-  profileInfo: profileInfo[];
+  ProfileInfo: profileInfo[];
 };
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const profileInfo: profileInfo[] = await sanityClient.fetch(query);
-  res.status(200).json({ profileInfo });
+  const ProfileInfo: profileInfo[] = await sanityClient.fetch(query);
+  res.status(200).json({ ProfileInfo });
 }

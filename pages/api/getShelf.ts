@@ -7,12 +7,12 @@ const query = groq`
 *[_type == "socials"]
 `;
 type Data = {
-  socials: Shelf[];
+  shelf: Shelf[];
 };
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const socials: Shelf[] = await sanityClient.fetch(query);
-  res.status(200).json({ socials });
+  const shelf: Shelf[] = await sanityClient.fetch(query);
+  res.status(200).json({ shelf });
 }
