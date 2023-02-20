@@ -5,6 +5,5 @@ export const fetchSocials = async () => {
 
   const data = await res.json();
   const socials: Socials[] = data.socials;
-
   return socials;
 };
