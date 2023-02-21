@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import avatar from "../pages/Images/avatar.svg";
 import { profileInfo } from "@/typings";
 type Props = {
   profileInfo: profileInfo;

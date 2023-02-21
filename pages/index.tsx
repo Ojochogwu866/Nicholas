@@ -36,7 +36,7 @@ const Home = ({ profile, profileInfo, shelf, socials, post }: Props) => {
         <About profileInfo={profileInfo} />
       </section>
       <section id="shelf&publications" className=" snap-start">
-        <ShelfPub />
+        <ShelfPub shelf={shelf} />
       </section>
       <section id="speak-with-nick" className=" snap-start">
         <Contact />
@@ -61,6 +61,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       socials,
       post,
     },
-    revalidate: 10,
   };
 };

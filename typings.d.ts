@@ -14,7 +14,6 @@ interface Image {
 export interface profileInfo extends SanityBody {
   _type: "profileInfo";
   backgroundInformation: string;
-  name: string;
   profileImage: Image;
 }
 export interface Post extends SanityBody {
