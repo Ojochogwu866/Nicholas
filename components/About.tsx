@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ProfileInfo } from "@/typings";
+import { urlFor } from "@/sanity";
 type Props = {
   profileInfo: ProfileInfo;
 };
@@ -25,7 +26,7 @@ function About({ profileInfo }: Props) {
           x: 0,
           opacity: 1,
         }}
-        src="https://i.ibb.co/5jHTHVt/indexk.jpg"
+        src={urlFor(profileInfo?.profileImage).url()}
         viewport={{ once: true }}
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded md:w-64 md:h-95 xl:w-[450px] xl:h-[550px]"
       />

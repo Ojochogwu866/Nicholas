@@ -45,7 +45,6 @@ const Home = ({ profile, profileInfo, shelf, socials, post }: Props) => {
   );
 };
 export default Home;
-
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const profileInfo: ProfileInfo = await fetchProfileInfo();
   const profile: Profile = await fetchProfile();

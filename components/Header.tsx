@@ -31,7 +31,7 @@ function Header({ socials }: Props) {
           <SocialIcon
             key={social._id}
             url={social.url}
-            fgColor="gray"
+            fgColor="#2F1C6A"
             bgColor="transparent"
           />
         ))}
@@ -56,12 +56,10 @@ function Header({ socials }: Props) {
         <SocialIcon
           className=" cursor-pointer"
           network="email"
-          fgColor="gray"
+          fgColor="#2F1C6A"
           bgColor="transparent"
         />
-        <p className="uppercase hidden md:inline text-sm text-gray-400">
-          SAY HI TO NICK
-        </p>
+        <p className="uppercase hidden md:inline text-sm">SAY HI TO NICK</p>
       </motion.div>
     </header>
   );

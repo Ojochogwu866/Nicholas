@@ -29,9 +29,9 @@ export interface Profile extends SanityBody {
 }
 export interface Shelf extends SanityBody {
   _type: "shelf";
-  bookTitle: string;
-  bookInformation: string;
-  BookImage: Image;
+  booktitle: string;
+  bookinformation: string;
+  bookimage: Image;
 }
 export interface Socials extends SanityBody {
   _type: "socials";
