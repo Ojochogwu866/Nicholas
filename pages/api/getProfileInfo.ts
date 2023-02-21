@@ -1,18 +1,18 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { groq } from "next-sanity";
 import { sanityClient } from "../../sanity";
-import { profileInfo } from "../../typings";
+import { ProfileInfo } from "../../typings";
 
 const query = groq`
-*[_type == "profileInfo"]
+*[_type == "profileInfo"][0]
 `;
 type Data = {
-  ProfileInfo: profileInfo;
+  profileInfo: ProfileInfo;
 };
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const ProfileInfo: profileInfo = await sanityClient.fetch(query);
-  res.status(200).json({ ProfileInfo });
+  const profileInfo: ProfileInfo = await sanityClient.fetch(query);
+  res.status(200).json({ profileInfo });
 }

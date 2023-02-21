@@ -1,9 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Cards from "./Cards";
-type Props = {};
+import { Shelf } from "@/typings";
+type Props = {
+  shelf: Shelf[];
+};
 
-function publications({}: Props) {
+function publications({ shelf }: Props) {
   const publications = [1, 2, 3, 4, 5];
   return (
     <div className=" h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0">

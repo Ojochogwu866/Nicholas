@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { profileInfo } from "@/typings";
+import { ProfileInfo } from "@/typings";
 type Props = {
-  profileInfo: profileInfo;
+  profileInfo: ProfileInfo;
 };
 
 function About({ profileInfo }: Props) {

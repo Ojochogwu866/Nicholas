@@ -4,7 +4,7 @@ import { sanityClient } from "../../sanity";
 import { Profile } from "@/typings";
 
 const query = groq`
-*[_type == "profile"]
+*[_type == "profile"][0]
 `;
 type Data = {
   profile: Profile;

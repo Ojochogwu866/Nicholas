@@ -5,6 +5,5 @@ export const fetchProfile = async () => {
 
   const data = await res.json();
   const profile: Profile = data.profile;
-
   return profile;
 };

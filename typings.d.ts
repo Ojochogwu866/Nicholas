@@ -11,7 +11,7 @@ interface Image {
     _type: "reference";
   };
 }
-export interface profileInfo extends SanityBody {
+export interface ProfileInfo extends SanityBody {
   _type: "profileInfo";
   backgroundInformation: string;
   profileImage: Image;
@@ -34,7 +34,7 @@ export interface Shelf extends SanityBody {
   BookImage: Image;
 }
 export interface Socials extends SanityBody {
-  _type: "social";
+  _type: "socials";
   title: string;
   url: string;
 }

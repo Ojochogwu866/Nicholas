@@ -6,7 +6,7 @@ import About from "../components/About";
 import ShelfPub from "../components/publications";
 import Contact from "../components/Contact";
 import { GetStaticProps } from "next";
-import { profileInfo, Shelf, Socials, Post, Profile } from "@/typings";
+import { ProfileInfo, Shelf, Socials, Post, Profile } from "@/typings";
 import { fetchPosts } from "@/utils/fetchPosts";
 import { fetchProfile } from "@/utils/fetchProfile";
 import { fetchProfileInfo } from "@/utils/fetchProfileInfo";
@@ -14,7 +14,7 @@ import { fetchSocials } from "@/utils/fetchSocials";
 import { fetchShelf } from "@/utils/fetchShelf";
 
 type Props = {
-  profileInfo: profileInfo;
+  profileInfo: ProfileInfo;
   shelf: Shelf[];
   profile: Profile;
   socials: Socials[];
@@ -24,7 +24,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 const Home = ({ profile, profileInfo, shelf, socials, post }: Props) => {
   return (
-    <div className=" bg-[#0A1828] snap-y snap-mandatory h-screen overflow-y-scroll overflow-x-hidden text-white z-0 scrollbar scrollbar-none">
+    <div className=" bg-[#fff] snap-y snap-mandatory h-screen overflow-y-scroll overflow-x-hidden text-[#2F1C6A] z-0 scrollbar scrollbar-none">
       <Head>
         <title>Author Nick</title>
       </Head>
@@ -47,7 +47,7 @@ const Home = ({ profile, profileInfo, shelf, socials, post }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const profileInfo: profileInfo = await fetchProfileInfo();
+  const profileInfo: ProfileInfo = await fetchProfileInfo();
   const profile: Profile = await fetchProfile();
   const shelf: Shelf[] = await fetchShelf();
   const socials: Socials[] = await fetchSocials();
