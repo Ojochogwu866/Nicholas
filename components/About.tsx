@@ -1,9 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import avatar from "../pages/Images/avatar.svg";
-type Props = {};
+import { profileInfo } from "@/typings";
+type Props = {
+  profileInfo: profileInfo;
+};
 
-function About({}: Props) {
+function About({ profileInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -29,16 +32,7 @@ function About({}: Props) {
       />
       <div className=" space-y-10 px-0 mt-6 md:px-10">
         <p className=" text-sm leading-6 text-center">
-          Nicholas Godwin is a prolific writer based in Los Angeles. A Nobel
-          Literary Fellow and Tin House Scholar, he has been a finalist for the
-          Iowa Review Prize in Fiction, the New England Review's Emerging Writer
-          Award, and a nominee for three Pushcart Prizes. His work has appeared
-          in or is forthcoming from Ecotone, New England Review, Fence, the
-          Idaho Review, the Cincinnati Review, Catapult, Joyland, and the Adroit
-          Journal, among others. He holds a BA in English and Philosophy from
-          Seattle University and an MFA from Ohio State University, where he was
-          awarded the Helen Earnhart Harley Creative Writing Fellowship Award.
-          He is represented by Soumeya Roberts.
+          {profileInfo?.backgroundInformation}
         </p>
       </div>
     </motion.div>

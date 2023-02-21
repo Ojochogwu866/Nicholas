@@ -1,15 +1,18 @@
 import React from "react";
 import Nav from "./Nav";
-type Props = {};
+import { Profile } from "@/typings";
+type Props = {
+  profile: Profile;
+};
 
-function Openpage({}: Props) {
+function Openpage({ profile }: Props) {
   return (
     <div className=" flex h-screen flex-col items-center justify-center text-center">
       <h1 className=" text-[200px] font-extrabold border-b border-gray-500 tracking-tighter leading-[200px] uppercase text-gray-500">
-        IORAVER GODWIN
+        {profile?.name}
       </h1>
       <h2 className=" mt-3 text-sm uppercase text-gray-500 tracking-[10px]">
-        AUTHOR AND BOOK WRITTER
+        {profile?.title}
       </h2>
       <Nav />
     </div>

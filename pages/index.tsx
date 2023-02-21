@@ -30,10 +30,10 @@ const Home = ({ profile, profileInfo, shelf, socials, post }: Props) => {
       </Head>
       <Header socials={socials} />
       <section id="openpage" className=" snap-center">
-        <OpenPage />
+        <OpenPage profile={profile} />
       </section>
       <section id="about" className=" snap-center">
-        <About />
+        <About profileInfo={profileInfo} />
       </section>
       <section id="shelf&publications" className=" snap-start">
         <ShelfPub />
