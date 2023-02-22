@@ -4,7 +4,13 @@ import { sanityClient } from "../../sanity";
 import { Post } from "../../typings";
 
 const query = groq`
-*[_type == "post"]
+*[_type == "Post"]{
+  _id,
+  title,
+  publishedAt,
+  'slug': slug.current,
+  body
+}
 `;
 type Data = {
   post: Post[];

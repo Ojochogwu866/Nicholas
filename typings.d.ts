@@ -18,9 +18,9 @@ export interface ProfileInfo extends SanityBody {
 }
 export interface Post extends SanityBody {
   _type: "post";
-  postTitle: string;
-  Post: string;
-  bookTitle: string;
+  title: string;
+  slug: string;
+  body: string;
 }
 export interface Profile extends SanityBody {
   _type: "profile";
