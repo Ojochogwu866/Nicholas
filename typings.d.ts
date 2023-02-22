@@ -20,7 +20,7 @@ export interface Post extends SanityBody {
   _type: "post";
   title: string;
   slug: string;
-  body: string;
+  body: Block[];
 }
 export interface Profile extends SanityBody {
   _type: "profile";
