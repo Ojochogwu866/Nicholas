@@ -4,7 +4,7 @@ import { sanityClient } from "../../sanity";
 import { Shelf } from "../../typings";
 
 const query = groq`
-*[_type == "socials"]
+*[_type == "shelf"]
 `;
 type Data = {
   shelf: Shelf[];

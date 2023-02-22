@@ -8,7 +8,7 @@ type Props = {
 function Openpage({ profile }: Props) {
   return (
     <div className=" flex h-screen flex-col items-center justify-center text-center">
-      <h1 className=" text-[200px] font-extrabold border-b border-gray-500 tracking-tighter leading-[200px] uppercase ">
+      <h1 className=" text-[120px] md:text-[200px]  font-extrabold border-b border-gray-500 tracking-tighter md:leading-[200px] uppercase ">
         {profile?.name}
       </h1>
       <h2 className=" mt-3 text-sm uppercase  tracking-[10px]">

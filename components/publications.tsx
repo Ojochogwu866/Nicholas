@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Cards from "./Cards";
 import { Shelf } from "@/typings";
 import { urlFor } from "@/sanity";
+import Link from "next/link";
 type Props = {
   shelf: Shelf[];
 };
@@ -24,6 +25,7 @@ function publications({ shelf }: Props) {
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              src={urlFor(shef?.bookimage).url()}
               className="w-[200px]"
               alt=""
             />
@@ -35,6 +37,12 @@ function publications({ shelf }: Props) {
                 {shef?.bookinformation}
               </p>
             </div>
+            <Link
+              className=" w-auto h-auto px-4 py-2 bg-[#2f1c6a] text-[#fff] uppercase text-sm"
+              href={shef?.url}
+            >
+              Buy on Amazon
+            </Link>
           </div>
         ))}
       </div>
