@@ -52,7 +52,7 @@ function Header({ socials }: Props) {
         transition={{
           duration: 1,
         }}
-        className="hidden md:flex flex-row items-center gray-300 cursor-pointer"
+        className=" md:flex flex-row  items-center gray-300 cursor-pointer"
       >
         <Link href="/#speak-with-nick">
           <SocialIcon
@@ -61,11 +61,10 @@ function Header({ socials }: Props) {
             fgColor="#2F1C6A"
             bgColor="transparent"
           />
-          <p className=" uppercase hidden md:inline text-sm">SAY HI TO NICK</p>
+          <p className=" uppercase hidden  md:inline text-sm">SAY HI TO NICK</p>
         </Link>
       </motion.div>
     </header>
   );
 }
-
 export default Header;

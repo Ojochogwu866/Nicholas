@@ -19,7 +19,7 @@ function Contact({}: Props) {
   };
   return (
     <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
-      <h3 className=" text-sm absolute top-8 uppercase tracking-[15px] z-50 text-gray-500">
+      <h3 className=" text-sm absolute top-5 uppercase tracking-[15px] z-50 text-gray-500">
         SAY HI TO NICK
       </h3>
       <div className="flex flex-col max-w-[600px] min-w-[300px]  space-y-10">

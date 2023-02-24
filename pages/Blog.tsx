@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 type Props = {
   socials: Socials[];
   post: [Post];
-};
+}
 
 function Blog({ socials, post }: Props) {
   return (

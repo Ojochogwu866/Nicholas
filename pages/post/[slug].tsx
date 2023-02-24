@@ -5,6 +5,7 @@ import PortableText from "react-portable-text";
 import { motion } from "framer-motion";
 import { fetchSocials } from "@/utils/fetchSocials";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 interface Props {
   posts: Post;
   socials: Socials[];
@@ -61,6 +62,7 @@ function Post({ posts, socials }: Props) {
             }}
           ></PortableText>
         </div>
+        <Footer socials={socials} />
       </section>
     </article>
   );

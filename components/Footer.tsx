@@ -7,7 +7,7 @@ type Props = {
 
 function Footer({ socials }: Props) {
   return (
-    <div className=" justify-center items-center flex flex-col">
+    <div className=" justify-center items-center sm:mt-16 flex flex-col">
       <div className=" md:hidden">
         {socials.map((social) => (
           <SocialIcon
@@ -15,7 +15,7 @@ function Footer({ socials }: Props) {
             url={social.url}
             fgColor="#2F1C6A"
             bgColor="transparent"
-            style={{ width: 35 }}
+            style={{ width: 32 }}
           />
         ))}
       </div>
