@@ -1,7 +1,6 @@
 import { Post } from "@/typings";
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import ClientSideRoute from "./Routes";
 import { urlFor } from "@/sanity";
 type Props = {
@@ -18,7 +17,10 @@ function PostList({ post }: Props) {
     >
       <div className="w-2/6 rounded-md bg-[#e2f3f6ba] px-6 py-3 ">
         {post?.map((posts) => (
-          <ClientSideRoute key={posts._id} route={`/post/${posts.slug}`}>
+          <ClientSideRoute
+            key={posts._id}
+            route={`/post/${posts.slug.current}`}
+          >
             <div className="">
               <p className=" text-[10px] flex justify-end items-end">
                 {new Date(posts?.publishedAt).toDateString().slice(4)}
@@ -28,10 +30,11 @@ function PostList({ post }: Props) {
                 src={urlFor(posts?.mainImage).url()}
                 alt={posts?.author.name}
               />
-              <p className=" text-sm font-semibold">
-                {posts?.title} {posts?.author.name}
-              </p>
+              <p className=" text-sm font-semibold">{posts?.title}</p>
               <div className=" text-sm mt-3">{posts?.description}</div>
+              <span className=" text-sm font-normal">
+                Author: {posts?.author.name}
+              </span>
               {/* <Link
                 posts={posts._id}
                 key={index}

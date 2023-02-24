@@ -4,19 +4,18 @@ import { sanityClient } from "../../sanity";
 import { Post } from "../../typings";
 
 const query = groq`
-*[_type == "post"]{
-  ...,
- 'slug': slug.current,
-  author->
-} | order(_createdAt desc)
+    *[_type=="post" && slug.current == $slug]{
+      ...,
+      author->
+    }
 `;
 type Data = {
-  post: Post[];
+  post: Post;
 };
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<Props>
 ) {
-  const post: Post[] = await sanityClient.fetch(query);
+  const post: Post = await sanityClient.fetch(query);
   res.status(200).json({ post });
 }

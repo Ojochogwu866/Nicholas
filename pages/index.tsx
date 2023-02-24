@@ -7,7 +7,6 @@ import ShelfPub from "../components/publications";
 import Contact from "../components/Contact";
 import { GetStaticProps } from "next";
 import { ProfileInfo, Shelf, Socials, Profile } from "@/typings";
-import { fetchPosts } from "@/utils/fetchPosts";
 import { fetchProfile } from "@/utils/fetchProfile";
 import { fetchProfileInfo } from "@/utils/fetchProfileInfo";
 import { fetchSocials } from "@/utils/fetchSocials";
