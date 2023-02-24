@@ -14,7 +14,7 @@ function About({ profileInfo }: Props) {
       transition={{ duration: 1.5 }}
       className="h-screen flex-col relative items-center md:text-left md:flex-row flex  max-w-7xl px-5 md:px-10 justify-evenly mx-auto"
     >
-      <h3 className=" text-sm absolute top-10 uppercase tracking-[15px] text-gray-500">
+      <h3 className=" text-sm absolute top-8 uppercase tracking-[15px] text-gray-500">
         About
       </h3>
       <motion.img
@@ -31,7 +31,7 @@ function About({ profileInfo }: Props) {
         className="mt-14 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded md:w-64 md:h-90 xl:w-[450px] xl:h-[550px]"
       />
       <div className=" md:space-y-10 px-0 md:px-10">
-        <p className=" text-xs md:text-sm md:leading-6 leading-5 text-left md:text-center">
+        <p className=" text-xs md:text-sm md:leading-6 leading-6 text-left md:text-center">
           {profileInfo?.backgroundInformation}
         </p>
       </div>

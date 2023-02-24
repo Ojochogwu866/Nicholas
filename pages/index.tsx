@@ -11,7 +11,7 @@ import { fetchProfile } from "@/utils/fetchProfile";
 import { fetchProfileInfo } from "@/utils/fetchProfileInfo";
 import { fetchSocials } from "@/utils/fetchSocials";
 import { fetchShelf } from "@/utils/fetchShelf";
-
+import Footer from "@/components/Footer";
 type Props = {
   profileInfo: ProfileInfo;
   shelf: Shelf[];
@@ -39,6 +39,7 @@ const Home = ({ profile, profileInfo, shelf, socials }: Props) => {
       <section id="speak-with-nick" className=" snap-start">
         <Contact />
       </section>
+      <Footer socials={socials} />
     </div>
   );
 };

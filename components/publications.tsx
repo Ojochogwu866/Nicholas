@@ -11,12 +11,15 @@ type Props = {
 function publications({ shelf }: Props) {
   return (
     <div className=" h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0">
-      <h3 className=" text-sm absolute top-10 uppercase tracking-[15px] text-gray-500">
+      <h3 className="hidden md:flex text-sm absolute top-8 uppercase tracking-[15px] text-gray-500">
         SHELF & PUBLICATIONS
+      </h3>
+      <h3 className="md:hidden text-sm absolute top-8 uppercase tracking-[15px] text-gray-500">
+        PUBLICATIONS
       </h3>
       <div className=" relative w-full overflow-x-scroll flex overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80">
         {shelf?.map((shef, i) => (
-          <div className=" w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center  p-5 md:p-36 h-screen">
+          <div className=" w-screen flex-shrink-0 snap-center flex justify-center mt-5 flex-col space-y-5 items-center  p-5 md:p-36 h-screen">
             <motion.img
               initial={{
                 y: -300,
@@ -33,12 +36,12 @@ function publications({ shelf }: Props) {
               <h4 className=" text-lg font-normal text-center">
                 {shef?.booktitle}
               </h4>
-              <p className=" text-xs md:text-sm md:text-center text-left">
+              <p className=" text-xs leading-6 md:text-sm md:text-center text-left">
                 {shef?.bookinformation}
               </p>
             </div>
             <Link
-              className=" w-auto h-auto px-4 py-2 bg-[#2f1c6a] text-[#fff] uppercase text-sm"
+              className=" w-auto -mt-3 h-auto px-4 py-2 bg-[#2f1c6a] text-[#fff] uppercase text-sm"
               href={shef?.url}
             >
               Buy on Amazon

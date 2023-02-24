@@ -10,7 +10,7 @@ interface Props {
   socials: Socials[];
 }
 
-function Post({ posts }: Props) {
+function Post({ posts, socials }: Props) {
   return (
     <article>
       <Header socials={socials} />
@@ -84,6 +84,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const socials: Socials[] = await fetchSocials();
   const query = `*[_type == "post" && slug.current == $slug][0]{
         _id,
         publishedAt,
@@ -108,6 +109,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       posts,
+      socials,
     },
     revalidate: 60,
   };

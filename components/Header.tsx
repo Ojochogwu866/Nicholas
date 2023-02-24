@@ -2,7 +2,7 @@ import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import { Socials } from "@/typings";
-
+import Link from "next/link";
 type Props = {
   socials: Socials[];
 };
@@ -25,7 +25,7 @@ function Header({ socials }: Props) {
         transition={{
           duration: 0.5,
         }}
-        className=" flex flex-row items-center"
+        className="hidden  md:flex flex-row items-center"
       >
         {socials.map((social) => (
           <SocialIcon
@@ -33,6 +33,7 @@ function Header({ socials }: Props) {
             url={social.url}
             fgColor="#2F1C6A"
             bgColor="transparent"
+            style={{ width: 45 }}
           />
         ))}
       </motion.div>
@@ -51,15 +52,17 @@ function Header({ socials }: Props) {
         transition={{
           duration: 1,
         }}
-        className=" flex flex-row items-center gray-300 cursor-pointer"
+        className="hidden md:flex flex-row items-center gray-300 cursor-pointer"
       >
-        <SocialIcon
-          className=" cursor-pointer"
-          network="email"
-          fgColor="#2F1C6A"
-          bgColor="transparent"
-        />
-        <p className="uppercase hidden md:inline text-sm">SAY HI TO NICK</p>
+        <Link href="#speak-with-nick">
+          <SocialIcon
+            className=" cursor-pointer "
+            network="email"
+            fgColor="#2F1C6A"
+            bgColor="transparent"
+          />
+          <p className=" uppercase hidden md:inline text-sm">SAY HI TO NICK</p>
+        </Link>
       </motion.div>
     </header>
   );
