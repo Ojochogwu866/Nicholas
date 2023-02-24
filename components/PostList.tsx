@@ -3,9 +3,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import ClientSideRoute from "./Routes";
 import { urlFor } from "@/sanity";
-type Props = {
-  post: Post[];
-};
+interface Props {
+  post: [Post];
+}
 
 function PostList({ post }: Props) {
   return (

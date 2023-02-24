@@ -43,6 +43,7 @@ export interface ProfileInfo extends SanityBody {
   profileImage: Image;
 }
 export interface Post extends SanityBody {
+  _id: string;
   _type: "post";
   author: Author;
   body: Block[];
@@ -50,7 +51,7 @@ export interface Post extends SanityBody {
   title: string;
   slug: Slug;
   description: string;
-  publshedAt: datetime;
+  publishedAt: datetime;
 }
 export interface Author extends SanityBody {
   _type: "author";

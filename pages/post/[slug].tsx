@@ -1,68 +1,68 @@
-// import { sanityClient, urlFor } from "@/sanity";
-// import { motion } from "framer-motion";
-// import { Post, Slug } from "@/typings";
-// import { GetStaticProps, GetStaticPaths } from "next";
-// import { fetchPosts } from "@/utils/fetchPosts";
-
-// type Props = {
-//   post: Post[];
-// };
-// function Post({ post }: Props) {
-//   return (
-//     <article>
-//       <section className="">
-//         <div className="">{post.description}</div>
-//       </section>
-//     </article>
-//   );
-// }
-// export default Post;
-
-// export const getStaticProps: GetStaticProps<Props> = async () => {
-//   const post: Post[] = await fetchPosts();
-//   return {
-//     props: {
-//       post,
-//     },
-//   };
-// };
-// export async function getStaticPaths() {
-//   return {
-//     paths: ["/post/[slug]", { params: { slug: "" } }],
-//     fallback: true,
-//   };
-// }
-import { groq } from "next-sanity";
 import { sanityClient, urlFor } from "@/sanity";
-import { motion } from "framer-motion";
 import { Post } from "@/typings";
-type Props = {
-  params: {
-    slug: string;
-  };
-};
+import { GetStaticProps } from "next";
+interface Props {
+  posts: Post;
+}
 
-async function Pos({ params: { slug } }: Props) {
-  const query = groq`
-    *[_type=="post" && slug.current == $slug]{
-      ...,
-      author->
-    }
-  `;
-  const post: Post = await sanityClient.fetch(query, { slug });
+function Post({ posts }: Props) {
   return (
     <article>
       <section className="">
-        <div className="">
-          <motion.img
-            className="object-cover object-center mx-auto"
-            alt={post.author.name}
-            src={urlFor(post.mainImage).url()}
-          />
-        </div>
+        <div className="">{posts.description}</div>
       </section>
     </article>
   );
 }
 
-export default Pos;
+export default Post;
+export const getStaticPaths = async () => {
+  const query = `*[_type == 'post']{
+        _id,
+       slug {
+        current
+      }
+      }`;
+  const post = await sanityClient.fetch(query);
+  const paths = post.map((posts: Post) => ({
+    params: {
+      slug: posts.slug.current,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const query = `*[_type == "post" && slug.current == $slug][0]{
+        _id,
+        _createdAt,
+        title,
+        author-> {
+            name,
+         
+        },
+        description,
+        mainImage,
+        slug,
+        body
+    }`;
+  const posts = await sanityClient.fetch(query, {
+    slug: params?.slug,
+  });
+
+  if (!posts) {
+    return {
+      notFound: true,
+    };
+  }
+  return {
+    props: {
+      posts,
+    },
+    revalidate: 60,
+  };
+};
