@@ -19,12 +19,12 @@ function Contact({}: Props) {
   };
   return (
     <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
-      <h3 className=" text-sm absolute top-8 uppercase tracking-[15px] text-gray-500">
+      <h3 className=" text-sm absolute top-8 uppercase tracking-[15px] z-50 text-gray-500">
         SAY HI TO NICK
       </h3>
       <div className="flex flex-col max-w-[600px] min-w-[300px]  space-y-10">
-        <p className=" text-sm md:text-base font-normal">
-          Got anyhting to say? Send me a message, I will get back to you.{" "}
+        <p className=" text-[13px] md:text-base font-normal">
+          Got anything to say? Send me a message, I will get back to you.{" "}
         </p>
         <div className=" space-y-18 gap-6 flex justify-center items-center">
           <div className="flex items-center space-x-3 justify-center">
@@ -43,13 +43,13 @@ function Contact({}: Props) {
           <div className="md:flex md:flex-row  flex-col md:space-x-2">
             <input
               {...register("name")}
-              className="contactInput w-full"
+              className="contactInput text-xs md:text-sm w-full"
               placeholder="Fullname"
               type="text"
             />
             <input
               {...register("email")}
-              className="contactInput w-full mt-2 md:mt-0"
+              className="contactInput text-xs md:text-sm w-full mt-2 md:mt-0"
               placeholder="Email Address"
               type="email"
             />
@@ -58,10 +58,10 @@ function Contact({}: Props) {
             <textarea
               {...register("message")}
               placeholder="Message"
-              className="contactInput w-full min-h-[100px]"
+              className="contactInput text-xs md:text-sm w-full min-h-[100px]"
             />
             <button
-              className="w-full bg-[#f7ab0a] mt-2 py-2 px-4 flex justify-center items-center rounded-md text-black  text-sm"
+              className="w-full bg-[#f7ab0a] mt-2 py-2 px-4 flex justify-center items-center rounded-md text-black  text-xs"
               type="submit"
             >
               Shoot

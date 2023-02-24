@@ -69,6 +69,7 @@ export interface Shelf extends SanityBody {
   booktitle: string;
   bookinformation: string;
   bookimage: Image;
+  url: string;
 }
 export interface Socials extends SanityBody {
   _type: "socials";

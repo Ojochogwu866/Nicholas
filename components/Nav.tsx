@@ -16,7 +16,7 @@ function Nav({}: Props) {
         <Link href="/Blog">
           <button className="navbutton">/ BLOG</button>
         </Link>
-        <Link href="#speak-with-nick">
+        <Link href="/#speak-with-nick">
           <button className="navbutton">/ CONTACT</button>
         </Link>
       </div>

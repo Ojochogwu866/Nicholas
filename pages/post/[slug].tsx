@@ -14,7 +14,7 @@ function Post({ posts, socials }: Props) {
   return (
     <article>
       <Header socials={socials} />
-      <section className="  w-10/12 mt-10 mx-auto">
+      <section className="  w-11/12 mt-10 mx-auto">
         <div className="group cursor-Pointer  mt-1 flex flex-col">
           <div className=" relative space-y-4  w-full mx-auto h-[280px]  drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out">
             <motion.img
@@ -47,8 +47,9 @@ function Post({ posts, socials }: Props) {
                 <h2 className="my-5 text-xl font-bold" {...props} />
               ),
               li: ({ children }: any) => (
-                <li className="ml-4 list-disc"> {children}</li>
+                <li className="ml-4 list-disc">{children}</li>
               ),
+
               link: ({ href, children }: any) => (
                 <a
                   href={href}

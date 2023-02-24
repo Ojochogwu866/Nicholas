@@ -10,11 +10,11 @@ type Props = {
 
 function publications({ shelf }: Props) {
   return (
-    <div className=" h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0">
-      <h3 className="hidden md:flex text-sm absolute top-8 uppercase tracking-[15px] text-gray-500">
+    <div className=" h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center">
+      <h3 className="hidden md:flex text-sm absolute top-8 uppercase tracking-[15px] z-50 text-gray-500">
         SHELF & PUBLICATIONS
       </h3>
-      <h3 className="md:hidden text-sm absolute top-8 uppercase tracking-[15px] text-gray-500">
+      <h3 className="md:hidden text-sm absolute top-8 uppercase  tracking-[15px] text-gray-500">
         PUBLICATIONS
       </h3>
       <div className=" relative w-full overflow-x-scroll flex overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80">

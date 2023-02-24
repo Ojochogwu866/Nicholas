@@ -5,6 +5,7 @@ import { GetStaticProps } from "next";
 import { fetchSocials } from "@/utils/fetchSocials";
 import { fetchPosts } from "@/utils/fetchPosts";
 import Postlist from "@/components/PostList";
+import Footer from "@/components/Footer";
 type Props = {
   socials: Socials[];
   post: [Post];
@@ -17,6 +18,7 @@ function Blog({ socials, post }: Props) {
       <div className=" snap-center">
         <Postlist post={post} />
       </div>
+      <Footer socials={socials} />
     </div>
   );
 }

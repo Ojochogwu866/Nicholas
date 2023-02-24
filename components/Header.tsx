@@ -9,7 +9,7 @@ type Props = {
 
 function Header({ socials }: Props) {
   return (
-    <header className=" sticky p-4 mx-auto top-0 flex justify-between  max-w-7xl items-start z-30 xl:items-center">
+    <header className=" sticky bg-white backdrop-blur-md bg-opacity-10 md:p-3 p-1 mx-auto top-0 flex justify-between  max-w-7xl items-start z-30 xl:items-center">
       {/*icons*/}
       <motion.div
         initial={{
@@ -54,7 +54,7 @@ function Header({ socials }: Props) {
         }}
         className="hidden md:flex flex-row items-center gray-300 cursor-pointer"
       >
-        <Link href="#speak-with-nick">
+        <Link href="/#speak-with-nick">
           <SocialIcon
             className=" cursor-pointer "
             network="email"
