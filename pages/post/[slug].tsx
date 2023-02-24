@@ -10,7 +10,7 @@ interface Props {
   posts: Post;
   socials: Socials[];
 }
-function Post({ posts, socials }: Props) {
+const Post = ({ posts, socials }: Props) => {
   return (
     <article>
       <Header socials={socials} />
@@ -61,7 +61,7 @@ function Post({ posts, socials }: Props) {
       </section>
     </article>
   );
-}
+};
 export default Post;
 export const getStaticPaths = async () => {
   const query = `*[_type == 'post']{

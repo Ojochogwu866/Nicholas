@@ -11,7 +11,7 @@ type Props = {
   post: Post[];
 };
 
-function Blog({ socials, post }: Props) {
+const Blog = ({ post, socials }: Props) => {
   return (
     <div className="bg-[#fff] snap-y snap-mandatory h-screen overflow-y-scroll overflow-x-hidden  z-0 scrollbar scrollbar-none">
       <Header socials={socials} />
@@ -21,7 +21,7 @@ function Blog({ socials, post }: Props) {
       <Footer socials={socials} />
     </div>
   );
-}
+};
 export default Blog;
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const socials: Socials[] = await fetchSocials();

@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
 import Header from "../components/Header";
 import OpenPage from "../components/Openpage";
 import About from "../components/About";
@@ -18,7 +17,6 @@ type Props = {
   profile: Profile;
   socials: Socials[];
 };
-const inter = Inter({ subsets: ["latin"] });
 
 const Home = ({ profile, profileInfo, shelf, socials }: Props) => {
   return (
