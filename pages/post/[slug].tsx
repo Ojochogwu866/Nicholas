@@ -10,7 +10,6 @@ interface Props {
   posts: Post;
   socials: Socials[];
 }
-
 function Post({ posts, socials }: Props) {
   return (
     <article>
@@ -47,10 +46,6 @@ function Post({ posts, socials }: Props) {
               h2: (props: any) => (
                 <h2 className="my-5 text-xl font-bold" {...props} />
               ),
-              li: ({ children }: any) => (
-                <li className="ml-4 list-disc">{children}</li>
-              ),
-
               link: ({ href, children }: any) => (
                 <a
                   href={href}

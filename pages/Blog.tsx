@@ -8,8 +8,8 @@ import Postlist from "@/components/PostList";
 import Footer from "@/components/Footer";
 type Props = {
   socials: Socials[];
-  post: [Post];
-}
+  post: Post[];
+};
 
 function Blog({ socials, post }: Props) {
   return (

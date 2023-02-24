@@ -57,6 +57,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       shelf,
       socials,
     },
-    revalidate: 10,
+    revalidate: 60,
   };
 };

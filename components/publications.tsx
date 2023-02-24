@@ -19,7 +19,10 @@ function publications({ shelf }: Props) {
       </h3>
       <div className=" relative w-full overflow-x-scroll flex overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80">
         {shelf?.map((shef, i) => (
-          <div className=" w-screen flex-shrink-0 snap-center flex justify-center mt-5 flex-col space-y-5 items-center  p-5 md:p-36 h-screen">
+          <div
+            key={shef._id}
+            className=" w-screen flex-shrink-0 snap-center flex justify-center mt-5 flex-col space-y-5 items-center  p-5 md:p-36 h-screen"
+          >
             <motion.img
               initial={{
                 y: -300,

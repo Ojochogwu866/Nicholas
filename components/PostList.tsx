@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import ClientSideRoute from "./Routes";
 import { urlFor } from "@/sanity";
 interface Props {
-  post: [Post];
+  post: Post[];
 }
 
 function PostList({ post }: Props) {
