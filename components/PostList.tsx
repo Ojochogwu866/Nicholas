@@ -13,37 +13,32 @@ function PostList({ post }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="h-screen flex-col relative items-start  md:text-left md:flex-row flex  max-w-7xl px-10 mx-auto"
+      className=""
     >
-      <div className="w-2/6 rounded-md bg-[#e2f3f6ba] px-6 py-3 ">
+      <div className="">
         {post?.map((posts) => (
-          <ClientSideRoute
-            key={posts._id}
-            route={`/post/${posts.slug.current}`}
-          >
-            <div className="">
-              <p className=" text-[10px] flex justify-end items-end">
-                {new Date(posts?.publishedAt).toDateString().slice(4)}
-              </p>
-              <motion.img
-                className="object-cover object-left lg:object-center"
-                src={urlFor(posts?.mainImage).url()}
-                alt={posts?.author.name}
-              />
-              <p className=" text-sm font-semibold">{posts?.title}</p>
-              <div className=" text-sm mt-3">{posts?.description}</div>
-              <span className=" text-sm font-normal">
-                Author: {posts?.author.name}
-              </span>
-              {/* <Link
-                posts={posts._id}
-                key={index}
-                href={`/posts/[slug]`}
-                as={`/posts/${posts?.slug}`}
-                className=" bg-slate-200 py-1 mt-1  px-2 text-xs mt-3"
-              >
-                Read Full Article
-              </Link> */}
+          <ClientSideRoute key={posts._id} route={`/post/${posts.slug}`}>
+            <div className="group cursor-Pointer  mt-1 flex flex-col">
+              <div className=" relative space-y-4  w-10/12 mx-auto h-[280px]  drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out">
+                <motion.img
+                  className=" object-cover object-center h-full w-full"
+                  src={urlFor(posts?.mainImage).url()}
+                  alt={posts?.author.name}
+                />
+                <div className=" absolute bottom-0 w-full bg-opacity-50 bg-black  rounded drop-shadow text-white p-7 flex justify-between flex-col">
+                  <p className=" text-sm font-semibold">{posts?.title}</p>
+                  <p className=" text-[10px] flex justify-end items-end">
+                    {new Date(posts?.publishedAt).toDateString().slice(4)}
+                  </p>
+
+                  <div className=" w-3/5 text-sm mt-3">
+                    {posts?.description}
+                  </div>
+                  <span className=" mt-2 text-xs font-normal">
+                    Author: {posts?.author.name}
+                  </span>
+                </div>
+              </div>
             </div>
           </ClientSideRoute>
         ))}

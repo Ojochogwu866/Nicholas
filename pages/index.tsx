@@ -22,7 +22,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 const Home = ({ profile, profileInfo, shelf, socials }: Props) => {
   return (
-    <div className=" bg-[#fff] snap-y snap-mandatory h-screen overflow-y-scroll overflow-x-hidden text-[#2F1C6A] z-0 scrollbar scrollbar-none">
+    <div className=" bg-[#fff]/80 snap-y snap-mandatory h-screen overflow-y-scroll overflow-x-hidden text-[#2F1C6A] z-0 scrollbar scrollbar-none">
       <Head>
         <title>Author Nick</title>
       </Head>

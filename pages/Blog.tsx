@@ -7,7 +7,7 @@ import { fetchPosts } from "@/utils/fetchPosts";
 import Postlist from "@/components/PostList";
 type Props = {
   socials: Socials[];
-  post: Post[];
+  post: [Post];
 };
 
 function Blog({ socials, post }: Props) {

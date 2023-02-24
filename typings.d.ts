@@ -46,7 +46,7 @@ export interface Post extends SanityBody {
   _id: string;
   _type: "post";
   author: Author;
-  body: Block[];
+  body: [object];
   mainImage: Image;
   title: string;
   slug: Slug;

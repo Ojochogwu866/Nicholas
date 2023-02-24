@@ -9,6 +9,10 @@ function ClientSideRoute({
   children: React.ReactNode;
   route: string;
 }) {
-  return <Link href={route}>{children}</Link>;
+  return (
+    <Link className="" href={route}>
+      {children}
+    </Link>
+  );
 }
 export default ClientSideRoute;
