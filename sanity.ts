@@ -2,12 +2,11 @@ import { createClient } from "@sanity/client";
 import createImageUrlBuilder from "@sanity/image-url";
 
 export const config = {
-  dataset: "production",
-  projectId: "ayj4dl3n"!,
-  apiVersion: "v2021-10-21",
-  useCdn: process.env.NODE_ENV === "production",
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  apiVersion: process.env.NEXT_PUBLIC_API_VERSION,
+  useCdn: false,
 };
-
 export const sanityClient = createClient(config);
 export const urlFor = (source: any) =>
   createImageUrlBuilder(config).image(source);
