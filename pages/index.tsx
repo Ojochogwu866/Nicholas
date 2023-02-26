@@ -6,9 +6,6 @@ import ShelfPub from "../components/publications";
 import Contact from "../components/Contact";
 import { GetStaticProps } from "next";
 import { ProfileInfo, Shelf, Socials, Profile } from "@/typings";
-import { fetchProfile } from "@/utils/fetchProfile";
-import { fetchProfileInfo } from "@/utils/fetchProfileInfo";
-import { fetchShelf } from "@/utils/fetchShelf";
 import Footer from "@/components/Footer";
 import { sanityClient } from "@/sanity";
 
@@ -68,7 +65,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const profile = await sanityClient.fetch(profileBio);
   const shelf = await sanityClient.fetch(bookShelf);
   const socials = await sanityClient.fetch(social);
-
   return {
     props: {
       profile,

@@ -13,7 +13,6 @@ const social = `*[_type == "socials"]{
   _id,
   url
   }`;
-
 const postList = `
   *[_type == "post"]{
     ...,
@@ -33,11 +32,9 @@ export default function Blog({ socials, post }: Props) {
     </div>
   );
 }
-
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const socials = await sanityClient.fetch(social);
   const post = await sanityClient.fetch(postList);
-
   return {
     props: {
       socials,

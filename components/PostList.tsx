@@ -5,7 +5,6 @@ import { urlFor } from "@/sanity";
 interface Props {
   post: [Post];
 }
-
 function PostList({ post }: Props) {
   return (
     <motion.div
