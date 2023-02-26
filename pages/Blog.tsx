@@ -23,12 +23,12 @@ const postList = `
 
 export default function Blog({ socials, post }: Props) {
   return (
-    <div className="bg-[#fff] snap-y snap-mandatory h-screen overflow-y-scroll overflow-x-hidden  z-0 scrollbar scrollbar-none">
+    <div className="bg-[#fff] snap-y snap-mandatory  overflow-y-scroll overflow-x-hidden  z-0 scrollbar scrollbar-none">
       <Header socials={socials} />
       <div className=" snap-center">
         <Postlist post={post} />
       </div>
-      <Footer />
+      <Footer socials={socials} />
     </div>
   );
 }

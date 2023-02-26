@@ -55,7 +55,7 @@ export default function Home({ socials, profile, profileInfo, shelf }: Props) {
       <section id="speak-with-nick" className=" snap-start">
         <Contact />
       </section>
-      <Footer />
+      <Footer socials={socials}/>
     </div>
   );
 }

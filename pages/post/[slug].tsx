@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { fetchSocials } from "@/utils/fetchSocials";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SocialIcon } from "react-social-icons";
 interface Props {
   posts: Post;
   socials: [Socials];
@@ -20,7 +21,7 @@ const Post = ({ posts, socials }: Props) => {
       <Header socials={socials} />
       <section className="  w-11/12 mt-10 mx-auto">
         <div className="group cursor-Pointer  mt-1 flex flex-col">
-          <div className=" relative space-y-4  w-full mx-auto h-[280px]  drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out">
+          <div className=" relative space-y-4 sx:h-[200px]  w-full mx-auto h-[280px]  drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out">
             <motion.img
               className=" object-cover object-center h-full w-full"
               src={urlFor(posts?.mainImage).url()}
@@ -61,8 +62,23 @@ const Post = ({ posts, socials }: Props) => {
             }}
           ></PortableText>
         </div>
-        <Footer />
       </section>
+      <div className=" justify-center sm:-mt-44 items-center flex flex-col  bottom-5 ">
+        <div className=" sx:flex">
+          {socials.map((social) => (
+            <SocialIcon
+              key={social._id}
+              url={social.url}
+              fgColor="#2F1C6A"
+              bgColor="transparent"
+              style={{ width: 30 }}
+            />
+          ))}
+        </div>
+        <p className=" text-[13px] underline">
+          Ioraver Godwin Nicholas — © 2023
+        </p>
+      </div>
     </article>
   );
 };
