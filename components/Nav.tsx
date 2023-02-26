@@ -13,7 +13,7 @@ function Nav({}: Props) {
         <Link href="#shelf&publications">
           <button className="navbutton">/ SHELF&PUBLICATIONS</button>
         </Link>
-        <Link href="/Blog">
+        <Link href="/blog">
           <button className="navbutton">/ BLOG</button>
         </Link>
         <Link href="/#speak-with-nick">

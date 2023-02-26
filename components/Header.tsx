@@ -1,16 +1,17 @@
 import React from "react";
+import { sanityClient } from "@/sanity";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import { Socials } from "@/typings";
+import { GetStaticProps } from "next";
 import Link from "next/link";
-type Props = {
-  socials: Socials[];
-};
+interface Props {
+  socials: [Socials];
+}
 
-function Header({ socials }: Props) {
+export default function Header({ socials }: Props) {
   return (
     <header className=" sticky bg-white backdrop-blur-md bg-opacity-10 md:p-3 p-1 mx-auto top-0 flex justify-between  max-w-7xl items-start z-30 xl:items-center">
-      {/*icons*/}
       <motion.div
         initial={{
           x: -500,
@@ -67,4 +68,16 @@ function Header({ socials }: Props) {
     </header>
   );
 }
-export default Header;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const query = `*[_type == "socials"]{
+    _id,
+    url
+  }`;
+  const social = await sanityClient.fetch(query);
+  return {
+    props: {
+      social,
+    },
+  };
+};

@@ -8,8 +8,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 interface Props {
   posts: Post;
-  socials: Socials[];
+  socials: [Socials];
 }
+const social = `*[_type == "socials"]{
+    _id,
+    url
+    }`;
 const Post = ({ posts, socials }: Props) => {
   return (
     <article>
@@ -57,7 +61,7 @@ const Post = ({ posts, socials }: Props) => {
             }}
           ></PortableText>
         </div>
-        <Footer socials={socials} />
+        <Footer />
       </section>
     </article>
   );
@@ -81,7 +85,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const socials: Socials[] = await fetchSocials();
+  const socials = await sanityClient.fetch(social);
   const query = `*[_type == "post" && slug.current == $slug][0]{
         _id,
         publishedAt,

@@ -2,10 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ProfileInfo } from "@/typings";
 import { urlFor } from "@/sanity";
-type Props = {
+interface Props {
   profileInfo: ProfileInfo;
-};
-
+}
 function About({ profileInfo }: Props) {
   return (
     <motion.div
@@ -14,7 +13,7 @@ function About({ profileInfo }: Props) {
       transition={{ duration: 1.5 }}
       className="h-screen flex-col relative items-center md:text-left md:flex-row flex  max-w-7xl px-5 md:px-10 justify-evenly mx-auto"
     >
-      <h3 className=" text-sm absolute top-5 uppercase tracking-[15px] z-50 text-gray-500">
+      <h3 className=" text-sm absolute top-8 uppercase tracking-[15px] z-50 text-gray-500">
         About
       </h3>
       <div className="hidden md:flex h-[300px] w-full -z-50 bg-[#2f1c6a]/30 bg-opacity-80" />

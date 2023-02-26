@@ -8,17 +8,38 @@ import { GetStaticProps } from "next";
 import { ProfileInfo, Shelf, Socials, Profile } from "@/typings";
 import { fetchProfile } from "@/utils/fetchProfile";
 import { fetchProfileInfo } from "@/utils/fetchProfileInfo";
-import { fetchSocials } from "@/utils/fetchSocials";
 import { fetchShelf } from "@/utils/fetchShelf";
 import Footer from "@/components/Footer";
-type Props = {
+import { sanityClient } from "@/sanity";
+
+interface Props {
   profileInfo: ProfileInfo;
   shelf: Shelf[];
   profile: Profile;
-  socials: Socials[];
-};
-
-const Home = ({ profile, profileInfo, shelf, socials }: Props) => {
+  socials: [Socials];
+}
+const social = `*[_type == "socials"]{
+_id,
+url
+}`;
+const profileInfor = `*[_type == "profileInfo"][0]{
+  backgroundInformation,
+  profileImage
+}
+`;
+const profileBio = `*[_type == "profile"][0]{
+  title,
+  name
+}
+`;
+const bookShelf = `*[_type == "shelf"]{
+  booktitle,
+  bookinformation,
+  bookimage,
+  url
+}
+`;
+export default function Home({ socials, profile, profileInfo, shelf }: Props) {
   return (
     <div className=" bg-[#fff]/80 snap-y snap-mandatory h-screen overflow-y-scroll overflow-x-hidden text-[#2F1C6A] z-0 scrollbar scrollbar-none">
       <Head>
@@ -37,16 +58,16 @@ const Home = ({ profile, profileInfo, shelf, socials }: Props) => {
       <section id="speak-with-nick" className=" snap-start">
         <Contact />
       </section>
-      <Footer socials={socials} />
+      <Footer />
     </div>
   );
-};
-export default Home;
+}
+
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const profileInfo: ProfileInfo = await fetchProfileInfo();
-  const profile: Profile = await fetchProfile();
-  const shelf: Shelf[] = await fetchShelf();
-  const socials: Socials[] = await fetchSocials();
+  const profileInfo = await sanityClient.fetch(profileInfor);
+  const profile = await sanityClient.fetch(profileBio);
+  const shelf = await sanityClient.fetch(bookShelf);
+  const socials = await sanityClient.fetch(social);
 
   return {
     props: {
